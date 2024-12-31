@@ -18,9 +18,12 @@ module.exports = {
       'error',
       {
         endOfLine: 'auto',
+        singleQuote: true,
+        tabWidth: 2,
+        semi: true,
       },
     ],
   },
   plugins: ['prettier'],
-  noInlineConfig: true,
+  noInlineConfig: false,
 };
