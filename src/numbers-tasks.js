@@ -7,6 +7,120 @@
  *                                                                                           *
  ******************************************************************************************* */
 
+function roundToLargestInteger(number) {
+  return Math.ceil(number);
+}
+
+/**
+ * Returns the value of a number rounded to the nearest integer.
+ *
+ * @param {number} number
+ * @return {number}
+ *
+ * @example:
+ * 5.5  => 6
+ * 5.4  => 5
+ * -5.5 => -5
+ */
+function roundToNearestInteger(number) {
+  return Math.round(number);
+}
+
+/**
+ * Returns the integer part of a number by removing any fractional digits.
+ *
+ * @param {number} number
+ * @return {number}
+ *
+ * @example:
+ * 5.5  => 5
+ * 5.4  => 5
+ * -5.5 => -5
+ */
+function getIntegerPartNumber(number) {
+  return Math.trunc(number);
+}
+
+/**
+ * Returns the sum of numbers.
+ *
+ * @param {number} x1
+ * @param {number} x2
+ * @param {number} x3
+ * @returns {number}
+ *
+ * @example:
+ * 1, 2, 3       => 6
+ * 0.1, 0.2, 0.3 => 0.6
+ */
+function getSumOfNumbers(x1, x2, x3) {
+  const sum = x1 + x2 + x3;
+  return parseFloat(sum.toFixed(10));
+}
+
+/**
+ * Returns the largest number.
+ *
+ * @param {number} firstNumber
+ * @param {number} secondNumber
+ * @return {number}
+ *
+ * @example:
+ * 1, 2   => 2
+ * -5, -6 => -5
+ * 0, 5   => 5
+ */
+function getMaxNumber(firstNumber, secondNumber) {
+  return Math.max(firstNumber, secondNumber);
+}
+
+/**
+ * Returns a random integer in the range from min to max.
+ *
+ * @param {number} min
+ * @param {number} max
+ * @return {number}
+ *
+ * @example:
+ * 1, 2  => 1 | 2
+ * -5, 0 => -5 | -4 | -3 | -2 | -1 | 0
+ * -1, 1 => -1 | 0 | 1
+ */
+function getRandomInteger(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
+
+/**
+ * Returns the length of the hypotenuse of a right triangle.
+ *
+ * @param {number} a
+ * @param {number} b
+ * @return {number}
+ *
+ * @example:
+ * 3, 4 => 5
+ */
+function getHypotenuse(a, b) {
+  return Math.hypot(a, b);
+}
+
+/**
+ * Returns count of odd numbers from zero to the resulting number.
+ * The resulting number is taken into account.
+ *
+ * @param {number} number
+ * @return {number}
+ *
+ * @example:
+ * 4  => 2
+ * 5  => 3
+ * 10 => 5
+ * 15 => 8
+ */
+function getCountOfOddNumbers(number) {
+  return Math.floor((Math.abs(number) + 1) / 2);
+}
+
 /**
  * Returns an area of a rectangle given by width and height.
  *
@@ -546,119 +660,6 @@ function roundToSmallestInteger(number) {
  * 5.1  => 6
  * -5.9 => -5
  */
-function roundToLargestInteger(number) {
-  return Math.ceil(number);
-}
-
-/**
- * Returns the value of a number rounded to the nearest integer.
- *
- * @param {number} number
- * @return {number}
- *
- * @example:
- * 5.5  => 6
- * 5.4  => 5
- * -5.5 => -5
- */
-function roundToNearestInteger(number) {
-  return Math.round(number);
-}
-
-/**
- * Returns the integer part of a number by removing any fractional digits.
- *
- * @param {number} number
- * @return {number}
- *
- * @example:
- * 5.5  => 5
- * 5.4  => 5
- * -5.5 => -5
- */
-function getIntegerPartNumber(number) {
-  return Math.trunc(number);
-}
-
-/**
- * Returns the sum of numbers.
- *
- * @param {number} x1
- * @param {number} x2
- * @param {number} x3
- * @returns {number}
- *
- * @example:
- * 1, 2, 3       => 6
- * 0.1, 0.2, 0.3 => 0.6
- */
-function getSumOfNumbers(x1, x2, x3) {
-  const sum = x1 + x2 + x3;
-  return parseFloat(sum.toFixed(10));
-}
-
-/**
- * Returns the largest number.
- *
- * @param {number} firstNumber
- * @param {number} secondNumber
- * @return {number}
- *
- * @example:
- * 1, 2   => 2
- * -5, -6 => -5
- * 0, 5   => 5
- */
-function getMaxNumber(firstNumber, secondNumber) {
-  return Math.max(firstNumber, secondNumber);
-}
-
-/**
- * Returns a random integer in the range from min to max.
- *
- * @param {number} min
- * @param {number} max
- * @return {number}
- *
- * @example:
- * 1, 2  => 1 | 2
- * -5, 0 => -5 | -4 | -3 | -2 | -1 | 0
- * -1, 1 => -1 | 0 | 1
- */
-function getRandomInteger(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
-}
-
-/**
- * Returns the length of the hypotenuse of a right triangle.
- *
- * @param {number} a
- * @param {number} b
- * @return {number}
- *
- * @example:
- * 3, 4 => 5
- */
-function getHypotenuse(a, b) {
-  return Math.hypot(a, b);
-}
-
-/**
- * Returns count of odd numbers from zero to the resulting number.
- * The resulting number is taken into account.
- *
- * @param {number} number
- * @return {number}
- *
- * @example:
- * 4  => 2
- * 5  => 3
- * 10 => 5
- * 15 => 8
- */
-function getCountOfOddNumbers(number) {
-  return Math.floor((Math.abs(number) + 1) / 2);
-}
 
 module.exports = {
   getRectangleArea,
