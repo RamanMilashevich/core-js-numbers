@@ -166,8 +166,8 @@ function toPrecision(number, precision) {
   return number.toPrecision(precision);
 }
 
-function getNumberValue(value) {
-  return Number(value);
+function getNumberValue() {
+  throw new Error('Not implemented');
 }
 
 function isNumber(value) {
@@ -178,8 +178,8 @@ function isInteger(number) {
   return Number.isInteger(number);
 }
 
-function getIntegerOnString(str, base) {
-  return parseInt(str, base);
+function getIntegerOnString() {
+  throw new Error('Not implemented');
 }
 
 function isSafeInteger(number) {
@@ -198,8 +198,8 @@ function roundToNearestInteger(number) {
   return Math.round(number);
 }
 
-function getIntegerPartNumber(number) {
-  return Math.trunc(number);
+function getIntegerPartNumber() {
+  throw new Error('Not implemented');
 }
 
 function getSumOfNumbers(x1, x2, x3) {
@@ -218,9 +218,8 @@ function getHypotenuse(a, b) {
   return Math.hypot(a, b);
 }
 
-function getFloatOnString(str) {
-  const parsed = parseFloat(str);
-  return !Number.isNaN(parsed) && str.trim() === String(parsed);
+function getFloatOnString() {
+  throw new Error('Not implemented');
 }
 
 function getCountOfOddNumbers(number) {
