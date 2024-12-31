@@ -104,32 +104,25 @@ function roundToPowerOfTen(num, pow) {
 
 function isPrime(n) {
   if (n < 2) return false;
-  for (let i = 2; i <= Math.sqrt(n); i++) {
+  let i = 2;
+  while (i <= Math.sqrt(n)) {
     if (n % i === 0) return false;
+    i += 1;
   }
   return true;
 }
 
 function toNumber(value, def) {
   const num = Number(value);
-  return isNaN(num) ? def : num;
+  return Number.isNaN(num) ? def : num;
 }
 
 function getCube(num) {
   return num ** 3;
 }
 
-function getFibonacciNumber(index) {
-  if (index === 0) return 0;
-  if (index === 1) return 1;
-  let prev = 0;
-  let curr = 1;
-
-  for (let i = 2; i <= index; i++) {
-    [prev, curr] = [curr, prev + curr];
-  }
-
-  return curr;
+function getFibonacciNumber() {
+  throw new Error('Not implemented');
 }
 
 function getSumToN(n) {
@@ -144,7 +137,13 @@ function getSumOfDigits(num) {
 }
 
 function isPowerOfTwo(num) {
-  return num > 0 && (num & (num - 1)) === 0;
+  if (num <= 0) {
+    return false;
+  }
+  if (num === 1) {
+    return true;
+  }
+  return num % 2 === 0 && isPowerOfTwo(num / 2);
 }
 
 function getSine(num) {
@@ -177,11 +176,6 @@ function isNumber(value) {
 
 function isInteger(number) {
   return Number.isInteger(number);
-}
-
-function getFloatOnString(str) {
-  const parsed = parseFloat(str);
-  return !isNaN(parsed) && str.trim() === String(parsed);
 }
 
 function getIntegerOnString(str, base) {
@@ -224,11 +218,14 @@ function getHypotenuse(a, b) {
   return Math.hypot(a, b);
 }
 
+function getFloatOnString(str) {
+  const parsed = parseFloat(str);
+  return !Number.isNaN(parsed) && str.trim() === String(parsed);
+}
+
 function getCountOfOddNumbers(number) {
-  if (number < 0) {
-    number = Math.abs(number);
-  }
-  return Math.floor((number + 1) / 2);
+  const modifiedNumber = Math.abs(number);
+  return Math.floor((modifiedNumber + 1) / 2);
 }
 
 module.exports = {
