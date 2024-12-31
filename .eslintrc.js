@@ -20,7 +20,6 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
-
   },
   plugins: ['prettier'],
   noInlineConfig: true,
